@@ -1,0 +1,65 @@
+[
+  {
+    "text": "Break the ice",
+    "meaning": "To initiate conversation in a social setting.",
+    "examples": [
+      "He told a joke to break the ice.",
+      "I tried to break the ice with a smile."
+    ],
+    "context": "casual"
+  },
+  {
+    "text": "Hit the books",
+    "meaning": "To begin studying seriously.",
+    "examples": [
+      "I need to hit the books before the final exam.",
+      "She hit the books all weekend."
+    ],
+    "context": "academic"
+  },
+  {
+    "text": "Under the weather",
+    "meaning": "Feeling slightly ill or sick.",
+    "examples": [
+      "I\u2019m a bit under the weather today.",
+      "She\u2019s staying home because she feels under the weather."
+    ],
+    "context": "casual"
+  },
+  {
+    "text": "Let the cat out of the bag",
+    "meaning": "To reveal a secret unintentionally.",
+    "examples": [
+      "He let the cat out of the bag about the surprise party.",
+      "Oops, I let the cat out of the bag!"
+    ],
+    "context": "casual"
+  },
+  {
+    "text": "Bite the bullet",
+    "meaning": "To accept something difficult or unpleasant.",
+    "examples": [
+      "I had to bite the bullet and go to the dentist.",
+      "She finally bit the bullet and resigned."
+    ],
+    "context": "professional"
+  },
+  {
+    "text": "Speak of the devil",
+    "meaning": "The person you were talking about just appeared.",
+    "examples": [
+      "Speak of the devil\u2014here comes John!",
+      "Oh, speak of the devil! We were just talking about you."
+    ],
+    "context": "casual"
+  },
+  {
+    "text": "Back to the drawing board",
+    "meaning": "To start over with a new plan.",
+    "examples": [
+      "The design failed. It\u2019s back to the drawing board.",
+      "Our idea didn\u2019t work\u2014we\u2019re back to the drawing board."
+    ],
+    "context": "professional"
+  }
+]

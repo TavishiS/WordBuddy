@@ -1,0 +1,27 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Django ---
+db.sqlite3
+*.sqlite3
+*.log
+
+# --- Environment Files ---
+**/.env
+
+# --- Virtual Environment ---
+tavi/
+
+# --- Node.js ---
+**/node_modules/
+*.lock
+
+# --- Build ---
+build/
+dist/
+
+# --- VS Code ---
+.vscode/

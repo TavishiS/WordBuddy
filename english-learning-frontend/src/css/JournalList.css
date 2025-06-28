@@ -1,0 +1,233 @@
+/* src/styles/journal-list.css */
+.journal-list {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Parchment texture */
+.journal-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg opacity="0.03" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23000" d="M20,20 L80,20 L80,80 L20,80 Z" stroke="%23000" stroke-width="2"/></svg>');
+  pointer-events: none;
+}
+
+/* Carousel container */
+/* src/css/JournalList.css */
+/* ... (keep all your existing journal-list styles) ... */
+
+.journal-carousel {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.journal-items-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.journal-item {
+  position: absolute;
+  width: 92.75%;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(108, 99, 255, 0.1);
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.journal-item.active {
+  transform: translateX(0);
+  opacity: 1;
+  margin-left: 4px;
+}
+
+.journal-item.slide-out-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.journal-item.slide-out-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* Bounce animation on hover */
+.journal-item:hover {
+  transform: translateX(0) translateY(-4px);
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.15);
+}
+
+.journal-item.active:hover {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(0) translateY(-4px); }
+  50% { transform: translateX(0) translateY(-8px); }
+}
+
+/* Navigation arrows */
+.journal-nav {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(108, 99, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.journal-nav:hover {
+  background: rgba(108, 99, 255, 0.2);
+}
+
+.journal-nav.prev {
+  left: -20px;
+}
+
+.journal-nav.next {
+  right: -20px;
+}
+
+/* Hide arrows when disabled */
+.journal-nav.disabled {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Arrow icons */
+.journal-nav::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border: 2px solid #6c63ff;
+  border-width: 2px 2px 0 0;
+}
+
+.journal-nav.prev::after {
+  transform: rotate(-135deg);
+  margin-right: -20px;
+}
+
+.journal-nav.next::after {
+  transform: rotate(45deg);
+  margin-left: -20px;
+}
+
+/* Date styling */
+.journal-date {
+  font-weight: 600;
+  color: #6c63ff;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.journal-date::before {
+  content: "✏️";
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.journal-content {
+  color: #2c3e50;
+  line-height: 1.7;
+  font-family: 'Lora', serif;
+  margin-bottom: 1rem;
+}
+
+/* Feedback bubble */
+.journal-feedback {
+  margin-top: 1.25rem;
+  padding: 1rem 1.5rem;
+  background: rgba(108, 99, 255, 0.05);
+  border-radius: 12px;
+  color: #4b4b4b;
+  font-style: italic;
+  font-family: 'Lora', serif;
+  position: relative;
+  border-left: 3px solid #6c63ff;
+}
+
+.journal-feedback::before {
+  content: "\"";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  font-size: 32px;
+  color: rgba(108, 99, 255, 0.1);
+  font-family: serif;
+  line-height: 1;
+}
+
+/* === Dark Mode === */
+@media (prefers-color-scheme: dark) {
+  .journal-list {
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  .journal-list::before {
+    background: url('data:image/svg+xml;utf8,<svg opacity="0.05" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23fff" d="M20,20 L80,20 L80,80 L20,80 Z" stroke="%23fff" stroke-width="2"/></svg>');
+  }
+  
+  .journal-item {
+    background: #252540;
+    border-color: rgba(138, 130, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .journal-date {
+    color: #8a82ff;
+  }
+  
+  .journal-content {
+    color: #f0f0f0;
+  }
+  
+  .journal-feedback {
+    background: rgba(138, 130, 255, 0.1);
+    color: #e0e0e0;
+    border-left-color: #8a82ff;
+  }
+  
+  .journal-feedback::before {
+    color: rgba(138, 130, 255, 0.2);
+  }
+  
+  .journal-nav {
+    background: rgba(138, 130, 255, 0.1);
+  }
+  
+  .journal-nav:hover {
+    background: rgba(138, 130, 255, 0.2);
+  }
+  
+  .journal-nav::after {
+    border-color: #8a82ff;
+  }
+}

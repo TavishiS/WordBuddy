@@ -1,0 +1,107 @@
+.navbar-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 36px;
+  background: linear-gradient(90deg, #f8f9fa 70%, #e8f0ff 100%);
+  border-radius: 16px;
+  margin: 24px auto 0 auto;
+  max-width: 1100px;
+  box-shadow: 0 4px 18px rgba(108, 99, 255, 0.09);
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  transition: box-shadow 0.3s;
+}
+
+.navbar-user .logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #6c63ff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+  transition: color 0.2s;
+}
+
+.navbar-user .logo:hover {
+  color: #4B0082;
+}
+
+.navbar-user .nav-right a,
+.navbar-user .nav-right button {
+  margin-left: 28px;
+  background: none;
+  border: none;
+  color: #4B0082;
+  font-size: 1.07rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 7px 18px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+}
+
+.navbar-user .nav-right a:hover,
+.navbar-user .nav-right button:hover {
+  background: linear-gradient(90deg, #6c63ff1a, #8a82ff1a);
+  color: #6c63ff;
+  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.09);
+}
+
+.navbar-user .nav-right button.logout:hover {
+  color: #c0392b;
+  background: rgba(192, 57, 43, 0.08);
+  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.09);
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 700px) {
+  .navbar-user {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 10px;
+    border-radius: 0 0 16px 16px;
+  }
+  .navbar-user .nav-right {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .navbar-user .nav-right a,
+  .navbar-user .nav-right button {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .navbar-user {
+    background: linear-gradient(90deg, #23234a 70%, #1a1a2e 100%);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  }
+  .navbar-user .logo {
+    color: #8a82ff;
+  }
+  .navbar-user .logo:hover {
+    color: #fff;
+  }
+  .navbar-user .nav-right a,
+  .navbar-user .nav-right button {
+    color: #b9a6e8;
+  }
+  .navbar-user .nav-right a:hover,
+  .navbar-user .nav-right button:hover {
+    background: linear-gradient(90deg, #6c63ff22, #8a82ff22);
+    color: #fff;
+  }
+  .navbar-user .nav-right button.logout:hover {
+    color: #ffb3b3;
+    background: rgba(192, 57, 43, 0.15);
+    box-shadow: 0 2px 8px rgba(192, 57, 43, 0.13);
+  }
+}

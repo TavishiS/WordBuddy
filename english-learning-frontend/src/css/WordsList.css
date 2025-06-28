@@ -1,0 +1,120 @@
+/* src/css/WordsList.css */
+.words-list {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.07);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Parchment texture */
+.words-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg opacity="0.03" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23000" d="M20,20 L80,20 L80,80 L20,80 Z" stroke="%23000" stroke-width="2"/></svg>');
+  pointer-events: none;
+}
+
+.word-item {
+  border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+  padding: 16px 10px;
+  transition: all 0.3s ease;
+}
+
+/* Bouncy hover effect - purple version */
+.word-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(108, 99, 255, 0.15);
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(-4px); }
+  50% { transform: translateY(-8px); }
+}
+
+.word-text {
+  font-weight: bold;
+  color: #6c63ff; /* Purple */
+  font-size: 1.2em;
+}
+
+.word-meaning {
+  margin: 6px 0;
+  color: #333;
+}
+
+.word-examples {
+  margin-top: 6px;
+  font-style: italic;
+  color: #555;
+  border-left: 2px solid rgba(108, 99, 255, 0.2);
+  padding-left: 10px;
+}
+
+/* Pagination - purple version */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.pagination-button {
+  padding: 8px 16px;
+  background-color: #6c63ff; /* Purple */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-button:hover:not(.disabled) {
+  background-color: #5848d6; /* Darker purple */
+  transform: translateY(-2px);
+}
+
+.pagination-button.disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+/* Dark mode - purple version */
+@media (prefers-color-scheme: dark) {
+  .words-list {
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+  }
+  
+  .word-item {
+    border-bottom-color: rgba(108, 99, 255, 0.2);
+  }
+  
+  .word-text {
+    color: #8a82ff; /* Lighter purple */
+  }
+  
+  .word-examples {
+    border-left-color: rgba(138, 130, 255, 0.3);
+  }
+  
+  .pagination-button {
+    background-color: #8a82ff;
+  }
+  
+  .pagination-button:hover:not(.disabled) {
+    background-color: #6c63ff;
+  }
+  
+  .pagination-button.disabled {
+    background-color: #3a3a4a;
+  }
+}

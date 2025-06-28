@@ -1,0 +1,221 @@
+/* src/css/WordPhrase.css */
+
+/* Main container */
+.wordphrase-container,
+.word-phrase-container {
+  max-width: 800px;
+  margin: 3.5rem auto;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #fff 65%, #f8f9fa 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(108, 99, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  transition: box-shadow 0.3s;
+}
+
+.wordphrase-container::before,
+.word-phrase-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg opacity="0.03" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23000" d="M20,20 L80,20 L80,80 L20,80 Z" stroke="%23000" stroke-width="2"/></svg>');
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Card/Section styling */
+.card, .section {
+  border: 1px solid rgba(108, 99, 255, 0.15);
+  margin: 1.5rem auto 2rem auto;
+  padding: 1.7rem 1.5rem;
+  border-radius: 16px;
+  max-width: 700px;
+  box-shadow: 0 4px 18px rgba(108, 99, 255, 0.08);
+  background: rgba(108, 99, 255, 0.03);
+  text-align: left;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.2s;
+  z-index: 1;
+}
+
+/* Subtle bounce on hover (exactly as in phrases-list) */
+@keyframes bounce {
+  0%, 100% { transform: translateY(-4px); }
+  50% { transform: translateY(-8px); }
+}
+
+.card:hover,
+.section:hover {
+  background-color: rgba(108, 99, 255, 0.03);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(108, 99, 255, 0.15);
+  animation: bounce 0.5s ease;
+}
+
+/* Main label for Word: and Phrase: */
+.card .main-label,
+.section .main-label {
+  color: #4B0082; /* Indigo */
+  font-size: 1.17rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+/* Section headings for Meaning, Examples, Context */
+.card .section-heading,
+.section .section-heading {
+  color: #4c2a85; /* Deep purple */
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 1px 2px rgba(108,99,255,0.06);
+}
+
+/* Word/Phrase text */
+.card .main-label + span,
+.section .main-label + span {
+  margin-left: 0.25rem;
+  font-weight: 500;
+  color: #222;
+  font-size: 1.15rem;
+}
+
+/* Meaning, Examples, Context content */
+.card .meaning,
+.section .meaning {
+  color: #333;
+  margin-bottom: 0.6rem;
+}
+
+.card .examples,
+.section .examples {
+  font-style: italic;
+  color: #555;
+  border-left: 2px solid rgba(108, 99, 255, 0.2);
+  padding-left: 10px;
+  margin-bottom: 0.6rem;
+}
+
+.card .context,
+.section .context {
+  color: #6c63ff;
+  font-size: 1.02rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Button group styling */
+.button-group,
+.auth-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button-group button,
+.auth-buttons button {
+  padding: 0.9rem 1.5rem;
+  font-size: 1.08rem;
+  border: none;
+  background: linear-gradient(90deg, #6c63ff 60%, #857cff 100%);
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.10);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.button-group button:hover,
+.auth-buttons button:hover {
+  background: linear-gradient(90deg, #857cff 60%, #6c63ff 100%);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.15);
+}
+
+/* Error message styling */
+.error {
+  color: #ff4d4f;
+  margin-bottom: 1.2rem;
+  font-size: 1.08rem;
+  background: rgba(255, 77, 79, 0.07);
+  border-left: 3px solid #ff4d4f;
+  border-radius: 9px;
+  padding: 0.7rem 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  animation: bounce-in 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+  z-index: 1;
+  position: relative;
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  60% { transform: scale(1.08); opacity: 1; }
+  80% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .wordphrase-container,
+  .word-phrase-container {
+    background: linear-gradient(135deg, #1a1a2e 65%, #16213e 100%);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .card, .section {
+    background: rgba(138, 130, 255, 0.07);
+    border-color: rgba(138, 130, 255, 0.20);
+    color: #f0f0f0;
+  }
+  .card .main-label,
+  .section .main-label {
+    color: #a083d2;
+  }
+  .card .main-label + span,
+  .section .main-label + span {
+    color: #e0e0e0;
+  }
+  .card .section-heading,
+  .section .section-heading {
+    color: #b9a6e8;
+    text-shadow: none;
+  }
+  .card .meaning,
+  .section .meaning {
+    color: #e0e0e0;
+  }
+  .card .examples,
+  .section .examples {
+    color: #bdb9e2;
+    border-left-color: rgba(138, 130, 255, 0.3);
+  }
+  .card .context,
+  .section .context {
+    color: #8a82ff;
+  }
+  .button-group button,
+  .auth-buttons button {
+    background: linear-gradient(90deg, #8a82ff 60%, #6c63ff 100%);
+    color: #fff;
+  }
+  .button-group button:hover,
+  .auth-buttons button:hover {
+    background: linear-gradient(90deg, #6c63ff 60%, #8a82ff 100%);
+  }
+  .error {
+    background: rgba(255, 77, 79, 0.13);
+    color: #ffb3b3;
+    border-left-color: #ffb3b3;
+  }
+}

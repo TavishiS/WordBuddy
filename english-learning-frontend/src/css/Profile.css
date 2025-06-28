@@ -1,0 +1,151 @@
+/* src/css/Profile.css */
+.profile {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Parchment texture */
+.profile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg opacity="0.03" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23000" d="M20,20 L80,20 L80,80 L20,80 Z" stroke="%23000" stroke-width="2"/></svg>');
+  pointer-events: none;
+}
+
+.profile h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+}
+
+/* Decorative underline */
+.profile h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #6c63ff, #8a82ff);
+  border-radius: 3px;
+}
+
+.profile-username {
+  color: #4B0082;
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  font-weight: 600;
+}
+
+.profile-message {
+  background: rgba(108, 99, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  border-left: 3px solid #6c63ff;
+  /* Add animation */
+  animation: all 0.3s ease;
+}
+
+.profile-message:hover{  
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(108, 99, 255, 0.15);
+  animation: bounce 0.5s ease;
+}
+
+/* Keyframes for bounce effect */
+@keyframes bounce {
+  0%, 100% { transform: translateY(-4px); }
+  50% { transform: translateY(-8px); }
+}
+
+
+.profile-message p {
+  color: #4b4b4b;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-family: 'Lora', serif;
+}
+
+.profile-message p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-button {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #6c63ff, #8a82ff);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+  margin-top: 1rem;
+}
+
+.profile-button:hover {
+  background: linear-gradient(135deg, #5848d6, #6c63ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+}
+
+.profile-button:active {
+  transform: translateY(0);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .profile {
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile::before {
+    background: url('data:image/svg+xml;utf8,<svg opacity="0.05" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23fff" d="M20,20 L80,20 L80,80 L20,80 Z" stroke="%23fff" stroke-width="2"/></svg>');
+  }
+  
+  .profile h1 {
+    color: #f8f9fa;
+  }
+  
+  .profile-username {
+    color: #8a82ff;
+  }
+  
+  .profile-message {
+    background: rgba(138, 130, 255, 0.1);
+    border-left-color: #8a82ff;
+  }
+  
+  .profile-message p {
+    color: #e0e0e0;
+  }
+  
+  .profile-button {
+    background: linear-gradient(135deg, #8a82ff, #88d3ce);
+    box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+  }
+  
+  .profile-button:hover {
+    background: linear-gradient(135deg, #6c63ff, #8a82ff);
+  }
+}
